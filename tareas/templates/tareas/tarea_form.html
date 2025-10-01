@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{% if object %}Editar tarea{% else %}Crear tarea{% endif %}</h1>
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Guardar</button>
+</form>
+<a href="{% url 'tareas:list' %}">Cancelar</a>
+{% endblock %}

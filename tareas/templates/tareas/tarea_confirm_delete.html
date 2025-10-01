@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Confirmar borrado</h1>
+<p>¿Eliminar "{{ object.titulo }}"?</p>
+<form method="post">{% csrf_token %}<button type="submit">Sí, borrar</button></form>
+<a href="{% url 'tareas:detail' pk=object.pk %}">No, volver</a>
+{% endblock %}
